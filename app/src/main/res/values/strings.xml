@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OldAndNewThing</string>
+    <string-array name="menu_text">
+        <item>农业</item>
+        <item>书画</item>
+        <item>评论</item>
+        <item>专题</item>
+    </string-array>
+</resources>

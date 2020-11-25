@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--沉浸式状态栏占位-->
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mask_tags_8" />
+
+    <RelativeLayout
+        android:id="@+id/ll_photo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/iv_status"
+        android:background="@color/mask_tags_8">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back" />
+
+        <TextView
+            android:id="@+id/tv_photo_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:maxEms="10"
+            android:singleLine="true"
+
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_load_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="数据正在加载中..."
+        android:textColor="@color/mask_tags_8"
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:id="@+id/sc_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_photo"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_photoarticle_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_below="@+id/tv_photoarticle_title">
+
+
+                <com.example.oldandnewthing.widget.MyImageSwitcher
+                    android:id="@+id/is_photoarticle"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp" />
+
+                <ImageButton
+                    android:id="@+id/ib_prev"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/btn_rec_shape"
+                    android:src="@mipmap/up_icon" />
+
+                <ImageButton
+                    android:id="@+id/ib_next"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/btn_rec_shape"
+                    android:src="@mipmap/next_icon" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <com.example.oldandnewthing.widget.DigitalIndicator
+                    android:id="@+id/digital_indicator"
+                    android:layout_width="70dp"
+                    android:layout_height="45dp" />
+
+                <TextView
+                    android:id="@+id/tv_photoarticle_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+
+                    android:textColor="@color/color_head_title"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Gallery
+                android:id="@+id/gallery"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/ll"
+                android:layout_marginBottom="60dp"
+                android:spacing="10dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/share_part_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

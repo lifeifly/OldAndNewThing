@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--使用ScrollView滑动会和RecyclerView起冲突，使用NestedScrollView不会，但是会导致recyclerview的scroll滑动事件不可使用-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+                <!---广告轮播Galllery-->
+                <com.example.oldandnewthing.widget.AutoGallery
+                    android:id="@+id/headline_image_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:spacing="10dp" />
+                <!---圆点指示器-->
+                <com.example.oldandnewthing.widget.FlowIndicator
+                    android:id="@+id/headline_circle_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/headline_image_gallery"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="3.5dp"
+                    android:layout_marginRight="50dp"
+                    app:radius="5dp"
+                    app:space="2dp" />
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

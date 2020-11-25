@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.MainActivity">
+    <!--沉浸式状态栏占位-->
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mask_tags_8" />
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/mask_tags_8">
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/search_shape"
+            android:gravity="center_vertical"
+            android:paddingLeft="50dp"
+            android:text="搜索,搜你想要的"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/tv_search"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_search" />
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/color_white"
+        app:tabIndicatorColor="@color/color_black"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/color_black"
+        app:tabTextColor="@color/color_black" />
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.SearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/mask_tags_8">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="280dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/search_shape"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="请输入想要搜索的内容"
+            android:maxEms="20"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/et_search"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_search" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_alignRight="@+id/et_search"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_btn_shape"
+            android:gravity="center"
+            android:text="搜索"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="没有找到想要找的数据哎！"
+            android:textSize="20sp"
+            android:textColor="@color/mask_tags_8"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
